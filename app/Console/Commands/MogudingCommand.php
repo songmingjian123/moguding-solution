@@ -55,7 +55,7 @@ class MogudingCommand extends Command
         $this->info('正在登录...');
         try {
             $response = (new Client())
-                ->post('https://api.moguding.net:8080/session/user/v3/login', [
+                ->post('https://api.moguding.net:1080/session/user/v3/login', [
                     'json' => [
                         't' => bin2hex(openssl_encrypt((int)(microtime(true) * 1000), 'AES-128-ECB', '23DbtQHR2UMbH6mJ', OPENSSL_PKCS1_PADDING)),
                         'loginType' => config('moguding.device'),
